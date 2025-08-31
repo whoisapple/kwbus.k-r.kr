@@ -4,14 +4,6 @@ import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
 
-//Import Mixpanel SDK
-import mixpanel from "mixpanel-browser";
-
-// Near entry of your product, init Mixpanel
-mixpanel.init("10495bf09ffdd7f21d99423b775df6d9", {
-  track_pageview: true,
-  persistence: "localStorage",
-});
 
 function useTimetable() {
   const [indukwonToSchool, setIndukwon] = useState({
@@ -104,7 +96,7 @@ export default function Home() {
         <div className="flex flex-col p-4 gap-4 items-center w-full">
         <div className="flex flex-col gap-2 w-full">
         {/* 인덕원 → 학교 */}
-        <a className="bg-[#F0F0FF] p-3 border-2 border-[#E7E7FA] rounded-xl text-[#007AFF] tracking-[-0.04em] flex gap-1 inline-flex items-center" href="https://naver.com">
+        <a className="bg-[#F0F0FF] p-3 border-2 border-[#E7E7FA] rounded-xl text-[#007AFF] tracking-[-0.04em] flex gap-1 inline-flex items-center" href="https://tally.so/r/mY1pev">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 16.75C12.2167 16.75 12.3917 16.6833 12.525 16.55C12.675 16.4 12.75 16.2167 12.75 16V11.75C12.75 11.5333 12.675 11.3583 12.525 11.225C12.3917 11.075 12.2167 11 12 11C11.7833 11 11.6 11.075 11.45 11.225C11.3167 11.3583 11.25 11.5333 11.25 11.75V16C11.25 16.2167 11.3167 16.4 11.45 16.55C11.6 16.6833 11.7833 16.75 12 16.75ZM12 9.3C12.2333 9.3 12.425 9.225 12.575 9.075C12.725 8.90833 12.8 8.70833 12.8 8.475C12.8 8.25833 12.725 8.075 12.575 7.925C12.425 7.75833 12.2333 7.675 12 7.675C11.7667 7.675 11.575 7.75833 11.425 7.925C11.275 8.075 11.2 8.25833 11.2 8.475C11.2 8.70833 11.275 8.90833 11.425 9.075C11.575 9.225 11.7667 9.3 12 9.3ZM12 21.5C10.6833 21.5 9.44167 21.25 8.275 20.75C7.125 20.25 6.125 19.575 5.275 18.725C4.425 17.875 3.75 16.875 3.25 15.725C2.75 14.5583 2.5 13.3167 2.5 12C2.5 10.6833 2.75 9.45 3.25 8.3C3.75 7.13333 4.425 6.125 5.275 5.275C6.125 4.425 7.125 3.75 8.275 3.25C9.44167 2.75 10.6833 2.5 12 2.5C13.3167 2.5 14.55 2.75 15.7 3.25C16.8667 3.75 17.875 4.425 18.725 5.275C19.575 6.125 20.25 7.13333 20.75 8.3C21.25 9.45 21.5 10.6833 21.5 12C21.5 13.3167 21.25 14.5583 20.75 15.725C20.25 16.875 19.575 17.875 18.725 18.725C17.875 19.575 16.8667 20.25 15.7 20.75C14.55 21.25 13.3167 21.5 12 21.5ZM12 20C14.2333 20 16.125 19.225 17.675 17.675C19.225 16.125 20 14.2333 20 12C20 9.76667 19.225 7.875 17.675 6.325C16.125 4.775 14.2333 4 12 4C9.76667 4 7.875 4.775 6.325 6.325C4.775 7.875 4 9.76667 4 12C4 14.2333 4.775 16.125 6.325 17.675C7.875 19.225 9.76667 20 12 20Z" fill="#007AFF"/>
         </svg> 
