@@ -12,7 +12,7 @@ export default function Analytics() {
   // 최초 1회 초기화 (dev StrictMode 중복 마운트 대비)
   useEffect(() => {
     if (inited) return;
-    const token = process.env.NEXT_PUBLIC_MIXPANEL_TOKEN;
+    const token = "10495bf09ffdd7f21d99423b775df6d9";
     if (!token) return;
     mixpanel.init(token, { track_pageview: false, persistence: "localStorage" });
     inited = true;
