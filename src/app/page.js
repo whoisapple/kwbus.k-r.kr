@@ -3,7 +3,7 @@
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { Map, MapMarker } from "react-kakao-maps-sdk";
-
+import { Analytics } from "@vercel/analytics/next"
 
 function useTimetable() {
   const [indukwonToSchool, setIndukwon] = useState({
