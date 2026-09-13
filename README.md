@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# KW Bus
 
-## Getting Started
+인덕원역과 학교 정문 사이 교내버스의 출발 예정 시각을 확인하는 모바일 우선 웹 앱입니다.
 
-First, run the development server:
+## 주요 기능
+
+- 인덕원역 → 학교 정문, 학교 정문 → 인덕원역 방향별 출발 카운트다운
+- 현재 출발편과 다음 출발편 표시
+- 각 정류장 위치를 카카오맵으로 표시
+- 시간표 정보를 60초마다 새로 확인하고, 브라우저 탭으로 돌아오면 즉시 갱신
+- 서비스 개선 의견 제출 링크
+
+> 이 페이지는 차량 GPS를 추적하는 실시간 위치 서비스가 아닙니다. 저장된 시간표를 기준으로 다음 출발까지 남은 시간을 계산합니다. 운행 시간은 `src/app/api/bus-timetable/constants.ts`에서 관리하며, 시간표가 바뀌면 이 파일도 함께 갱신해야 합니다.
+
+## 기술 스택
+
+- Next.js 15 (App Router), React 19
+- Tailwind CSS 4
+- Kakao Maps JavaScript SDK
+- Luxon (한국 시간 기준 시각 계산)
+- Vercel Analytics
+
+## 시작하기
+
+필요한 도구: Node.js와 npm.
 
 ```bash
+git clone https://github.com/whoisapple/kwbus.k-r.kr.git
+cd kwbus.k-r.kr
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+개발 서버가 시작되면 [http://localhost:3000](http://localhost:3000)을 엽니다.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+프로덕션 빌드는 다음과 같이 만들고 실행할 수 있습니다.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 시간표와 경로
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app/api/bus-timetable/constants.ts`: 방향별 출발 시각
+- `src/app/api/bus-timetable/utils.ts`: Asia/Seoul 시간대 기준 남은 시간 계산
+- `src/app/api/bus-timetable/indukwon` 및 `school`: 방향별 시간표 API
+- `src/app/page.js`: 카운트다운과 지도 화면
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+운행 일정은 학기·요일·휴일에 따라 달라질 수 있으므로, 실제 이용 전 공지된 시간표를 확인하세요. 배포 도메인에서 지도를 표시하려면 Kakao Maps JavaScript SDK 키와 도메인 설정이 유효해야 합니다.
