@@ -2,6 +2,9 @@
 
 인덕원역과 학교 정문 사이 교내버스의 출발 예정 시각을 확인하는 모바일 우선 웹 앱입니다.
 
+<img width="3840" height="2160" alt="image" src="https://github.com/user-attachments/assets/d2d90f1d-eb66-4ee9-b874-132890a8dd65" />
+
+
 ## 주요 기능
 
 - 인덕원역 → 학교 정문, 학교 정문 → 인덕원역 방향별 출발 카운트다운
